@@ -63,7 +63,7 @@ export default function Extension(){
             <div className="w-full">
                 <Collapsible open={extensionIsOpen} onOpenChange={setExtensionIsOpen} className="space-y-3">
                     <ExtensionActions/>
-                    <CollapsibleContent>
+                    <CollapsibleContent className="w-full h-fit max-h-[500px] border border-zinc-200 rounded-md overflow-auto">
                         <ExtensionPanels/>
                     </CollapsibleContent>
                 </Collapsible>
