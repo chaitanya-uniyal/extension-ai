@@ -25,3 +25,28 @@ async function createCompletion(model: string, prompt: string, context: any) {
     stream: true
   })
 }
+
+const handler: PlasmoMessaging.PortHandler = async (req, res) => {
+  let cumulativeData = ""
+
+  const prompt = req.body.prompt
+  const model = req.body.model
+  const context = req.body.context
+
+  try {
+    const completion = await createCompletion(model, prompt, context)
+
+    completion.on("content", (delta, snapshot) => {
+      cumulativeData += delta
+      res.send({ message: cumulativeData, error: "", isEnd: false })
+    })
+
+    completion.on("end", () => {
+      res.send({ message: "END", error: "", isEnd: true })
+    })
+  } catch (error) {
+    res.send({ error: "something went wrong" })
+  }
+}
+
+export default handler

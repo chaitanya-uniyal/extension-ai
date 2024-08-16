@@ -1,4 +1,5 @@
 import { useExtension } from "../context/extension-context"
+import Summary from "./summary"
 
 export default function ExtensionPanels() {
   const { extensionPanel } = useExtension()
