@@ -51,3 +51,72 @@ export async function getVideoData(id: string) {
 
   return { metadata, transcript: null }
 }
+
+export function cleanJsonTranscipt(transcript) {
+  const chunks = []
+
+  let currentChunk = ""
+  let currentStartTime = transcript.events[0].tStartMs
+  let currentEndTime = currentStartTime
+
+  transcript.events.forEach((event) => {
+    event.segs?.forEach((seg) => {
+      const segmentText = seg.utf8.replace(/\n/g, " ")
+      currentEndTime = event.tStartMs + (seg.tOffsetMs || 0)
+      if ((currentChunk + segmentText).length > 300) {
+        chunks.push({
+          text: currentChunk.trim(),
+          startTime: currentStartTime,
+          endTime: currentEndTime
+        })
+        currentChunk = segmentText
+        currentStartTime = currentEndTime
+      } else {
+        currentChunk += segmentText
+      }
+    })
+  })
+
+  if (currentChunk) {
+    chunks.push({
+      text: currentChunk.trim(),
+      startTime: currentStartTime,
+      endTime: currentEndTime
+    })
+  }
+
+  return chunks
+}
+
+export function cleanTextTranscript(transcript) {
+  let textLines = []
+  let tempText = ""
+  let lastTime = 0
+
+  transcript.events.forEach((event) => {
+    if (event.segs) {
+      event.segs.forEach((seg) => {
+        const segmentStartTimeMs = event.startMs + (seg.tOffsetMs || 0)
+
+        if (
+          tempText &&
+          (segmentStartTimeMs - lastTime > 1000 || seg.utf8 === "\n")
+        ) {
+          const timeFormatted = new Date(lastTime).toISOString().substr(11, 12)
+          textLines.push(`${timeFormatted}: ${tempText.trim()}`)
+          tempText = ""
+        }
+
+        lastTime = segmentStartTimeMs
+        tempText += seg.utf8
+      })
+    }
+  })
+
+  if (tempText) {
+    const timeFormatted = new Date(lastTime).toISOString().substr(11, 12)
+    textLines.push(`${timeFormatted}: ${tempText.trim()}`)
+  }
+
+  return textLines.join("\n")
+}

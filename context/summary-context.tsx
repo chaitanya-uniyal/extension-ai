@@ -1,4 +1,4 @@
-import { models, prompts, type Model, type Prompt } from "@/lib/constants"
+import { models, prompts, type Model, type Prompt } from "../lib/constants"
 import { createContext, useContext, useEffect, useState } from "react"
 
 import { usePort } from "@plasmohq/messaging/hook"
