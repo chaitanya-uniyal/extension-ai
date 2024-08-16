@@ -1,5 +1,6 @@
 import { useExtension } from "../context/extension-context"
 import Summary from "./summary"
+import Transcript from "./transcript"
 
 export default function ExtensionPanels() {
   const { extensionPanel } = useExtension()
@@ -8,7 +9,7 @@ export default function ExtensionPanels() {
     <div>
       {extensionPanel === "Summary" && <Summary />}
       {extensionPanel === "Transcript" && <Transcript />}
-      {extensionPanel === "Chat" && <Chat />}
+      {/* {extensionPanel === "Chat" && <Chat />} */}
     </div>
   )
 }

@@ -1,7 +1,7 @@
-import  { useExtension } from "@/context/extension-context";
+import  { useExtension } from "../context/extension-context";
 import { Collapsible, CollapsibleContent } from "./ui/collapsible";
 import { useEffect } from "react";
-import { getVideoData } from "@/utils/functions";
+import { getVideoData } from "../utils/functions";
 import ExtensionActions from "./extension-actions";
 import ExtensionPanels from "./extension-panels";
 

@@ -1,8 +1,8 @@
 
-import Extension from "@/components/extension";
+import Extension from "../../components/extension";
 import type { PlasmoCSConfig, PlasmoGetInlineAnchor } from "plasmo"
 import cssText from "data-text:~style.css"
-import Providers from "@/components/provider";
+import Providers from "../../components/provider";
 
 const INJECTED_ELEMENT_ID = "#secondary.style-scope.ytd-watch-flexy";
 

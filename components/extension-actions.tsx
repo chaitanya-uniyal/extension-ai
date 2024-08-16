@@ -1,4 +1,4 @@
-import { useExtension } from "@/context/extension-context"
+import { useExtension } from "../context/extension-context"
 import { useCopyToClipboard } from "../lib/hooks/use-copy-to-clipboard"
 import {
   ActivityLogIcon,
