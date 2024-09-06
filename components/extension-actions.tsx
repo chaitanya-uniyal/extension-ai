@@ -1,5 +1,5 @@
-import { useExtension } from "../context/extension-context"
-import { useCopyToClipboard } from "../lib/hooks/use-copy-to-clipboard"
+import { useExtension } from "@/contexts/extension-context"
+import { useCopyToClipboard } from "@/lib/hooks/use-copy-to-clipboard"
 import {
   ActivityLogIcon,
   CardStackPlusIcon,
@@ -53,7 +53,7 @@ export default function ExtensionActions() {
             <ActivityLogIcon className="h-4 w-4 opacity-60" />
             <span className="opacity-90">Transcript</span>
           </Button>
-          <Button
+          {/* <Button
             variant="outline"
             onClick={() => {
               setExtensionPanel("Chat")
@@ -63,7 +63,7 @@ export default function ExtensionActions() {
           rounded-r-none focus:z-10 bg-transparent space-x-2 items-center">
             <ChatBubbleIcon className="h-4 w-4 opacity-60" />
             <span className="opacity-90">Chat</span>
-          </Button>
+          </Button> */}
         </div>
       </div>
 

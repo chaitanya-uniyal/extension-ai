@@ -1,7 +1,6 @@
-import React from "react";
-import { useExtension } from "../context/extension-context"
-import { useTranscript } from "../context/transcript-context"
-
+import { useExtension } from "@/contexts/extension-context"
+import { useTranscript } from "@/contexts/transcript-context"
+import React from "react"
 
 import TranscriptList from "./transcript-list"
 import TranscriptSkeleton from "./transcript-skeleton"

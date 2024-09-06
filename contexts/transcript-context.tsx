@@ -1,5 +1,5 @@
-import type { Transcript } from "../lib/constants"
-import { cleanJsonTranscipt } from "../utils/functions"
+import type { Transcript } from "@/lib/constants"
+import { cleanJsonTranscipt } from "@/utils/functions"
 import { createContext, useContext, useMemo, useState } from "react"
 
 import { useExtension } from "./extension-context"

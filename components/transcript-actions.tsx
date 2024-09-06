@@ -1,7 +1,7 @@
-import { useExtension } from "../context/extension-context"
-import { useTranscript } from "../context/transcript-context"
-import { useCopyToClipboard } from "../lib/hooks/use-copy-to-clipboard"
-import { cleanTextTranscript } from "../utils/functions"
+import { useExtension } from "@/contexts/extension-context"
+import { useTranscript } from "@/contexts/transcript-context"
+import { useCopyToClipboard } from "@/lib/hooks/use-copy-to-clipboard"
+import { cleanTextTranscript } from "@/utils/functions"
 import {
   CheckIcon,
   ClipboardCopyIcon,

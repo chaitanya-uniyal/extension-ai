@@ -20,12 +20,7 @@ export const models: Model[] = [
     content: "gpt-3.5-turbo",
     icon: <BarChartIcon className="h-4 w-4 opacity-70" />
   },
-  {
-    value: "GPT-4",
-    label: "GPT-4",
-    content: "gpt-4-turbo",
-    icon: <BarChartIcon className="h-4 w-4 opacity-70" />
-  }
+
 ]
 
 export const prompts: Prompt[] = [

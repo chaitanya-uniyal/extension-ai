@@ -1,4 +1,4 @@
-import { useSummary } from "../context/summary-context"
+import { useSummary } from "@/contexts/summary-context"
 
 import Markdown from "./markdown"
 import SummarySkeleton from "./summary-skeleton"
