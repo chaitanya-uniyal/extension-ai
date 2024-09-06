@@ -6,7 +6,7 @@
 // import type { PlasmoMessaging } from "@plasmohq/messaging";
 
 // // Initialize OpenAI client with your API key
-// const openai = new OpenAI({ apiKey: "your api key" });
+// const openai = new OpenAI({ apiKey: env.KEY});
 
 // async function createCompletion(model: string, prompt: string, context: any) {
 //   const parsed = context.transcript.events
@@ -54,9 +54,10 @@ import { error } from "console"
 import { OpenAI } from "openai"
 
 import type { PlasmoMessaging } from "@plasmohq/messaging"
+import { env } from "process"
 
 const llm = new OpenAI({
-  apiKey: "your api key"
+  apiKey: env.KEY
 })
 
 async function createCompletion(model: string, prompt: string, context: any) {
