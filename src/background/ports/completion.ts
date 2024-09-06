@@ -6,7 +6,7 @@
 // import type { PlasmoMessaging } from "@plasmohq/messaging";
 
 // // Initialize OpenAI client with your API key
-// const openai = new OpenAI({ apiKey: "sk-af48_OGKD1--p2-0zjPVmpKvW-uBG8VscQFs18aNoST3BlbkFJ0MiTBzEwbIl5Y3Kvkd-GlN3HA38BGBPEM-EEGMi88A" });
+// const openai = new OpenAI({ apiKey: "your api key" });
 
 // async function createCompletion(model: string, prompt: string, context: any) {
 //   const parsed = context.transcript.events
